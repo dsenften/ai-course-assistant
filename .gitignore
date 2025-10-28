@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+# Streamlit (echte Secrets, aber nicht Beispiele)
+.streamlit/secrets.toml
+!.streamlit/secrets.toml.example
+# Environment variables (echte .env, aber nicht Beispiele)
+.env
+.env.local
+!.env.example
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+# OS
+.DS_Store
+Thumbs.db
