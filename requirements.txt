@@ -1,0 +1,8 @@
+# AI Kurs-Assistent Dependencies für Streamlit Cloud
+# Generiert aus pyproject.toml für Kompatibilität
+
+anthropic>=0.71.0
+openai>=2.6.1
+python-dotenv>=1.2.1
+streamlit>=1.50.0
+watchdog>=6.0.0
