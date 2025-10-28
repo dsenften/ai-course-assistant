@@ -18,7 +18,7 @@ pip-delete-this-directory.txt
 !.env.example
 
 # Render.com (echte Konfiguration, aber nicht Beispiele)
-render.yaml
+# render.yaml (kann committed werden, da keine Secrets)
 !render.yaml.example
 # IDE
 .vscode/
