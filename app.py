@@ -53,10 +53,17 @@ st.markdown("""
 
 def init_ai_client():
     """Initialisiert den AI-Client basierend auf verfügbaren API-Schlüsseln"""
-    
+
+    # Sichere Methode für API-Schlüssel (funktioniert sowohl lokal als auch auf Render.com)
+    def get_api_key(key_name):
+        try:
+            return st.secrets.get(key_name) or os.getenv(key_name)
+        except:
+            return os.getenv(key_name)
+
     # Prüfe OpenAI API-Schlüssel
-    openai_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
-    anthropic_key = st.secrets.get("ANTHROPIC_API_KEY") or os.getenv("ANTHROPIC_API_KEY")
+    openai_key = get_api_key("OPENAI_API_KEY")
+    anthropic_key = get_api_key("ANTHROPIC_API_KEY")
     
     if openai_key:
         try:
