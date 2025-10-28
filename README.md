@@ -70,7 +70,33 @@ Die App ist dann verfügbar unter: http://localhost:8501
 2. Erstellen Sie einen neuen API-Schlüssel
 3. Kopieren Sie den Schlüssel (beginnt mit `sk-ant-api03-`)
 
-## 🌐 Deployment auf Streamlit Cloud
+## 🚀 Deployment
+
+### Option 1: Render.com (Empfohlen)
+
+1. **Repository zu Render.com hinzufügen:**
+   - Gehen Sie zu [render.com](https://render.com/)
+   - Erstellen Sie einen Account
+   - Verbinden Sie Ihr GitHub-Repository
+   - Wählen Sie "Web Service"
+
+2. **Deployment konfigurieren:**
+   - **Name:** ai-course-assistant
+   - **Branch:** develop
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true`
+
+3. **API-Schlüssel konfigurieren:**
+   - Gehen Sie zu "Environment" in den Service-Einstellungen
+   - Fügen Sie hinzu:
+     - `OPENAI_API_KEY` = `sk-...`
+     - `ANTHROPIC_API_KEY` = `sk-ant-...`
+
+4. **Deploy:**
+   - Render.com baut und deployed automatisch
+   - Die App ist unter einer `.onrender.com` URL verfügbar
+
+### Option 2: Streamlit Cloud
 
 1. Pushen Sie Ihr Repository zu GitHub
 2. Gehen Sie zu https://share.streamlit.io/

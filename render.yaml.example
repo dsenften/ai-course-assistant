@@ -1,0 +1,25 @@
+# Render.com Deployment Konfiguration für AI Kurs-Assistent
+# Diese Datei kann sicher in Git committed werden
+
+services:
+  - type: web
+    name: ai-course-assistant
+    env: python
+    plan: free  # Kostenloser Tier für Entwicklung
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false
+    
+    # Environment Variables - werden über Render Dashboard konfiguriert
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false  # Manuell über Dashboard setzen
+      - key: ANTHROPIC_API_KEY
+        sync: false  # Manuell über Dashboard setzen
+    
+    # Optional: Weitere Konfigurationen
+    # region: oregon  # Standard Region
+    # python: 3.10    # Python Version (wird automatisch erkannt)
+    
+    # Für kostenpflichtige Pläne:
+    # plan: starter   # $7/Monat für bessere Performance
+    # plan: standard  # $25/Monat für Production

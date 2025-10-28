@@ -16,6 +16,10 @@ pip-delete-this-directory.txt
 .env
 .env.local
 !.env.example
+
+# Render.com (echte Konfiguration, aber nicht Beispiele)
+render.yaml
+!render.yaml.example
 # IDE
 .vscode/
 .idea/
