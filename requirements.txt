@@ -1,5 +1,4 @@
-anthropic
-openai
-python-dotenv
 streamlit
-watchdog
+openai
+anthropic
+python-dotenv
